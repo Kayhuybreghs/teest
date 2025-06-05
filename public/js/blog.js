@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             category: "Techniek & Performance",
             title: "Waarom een Top Pagespeed en SEO Score Cruciaal Zijn — KHCustomWeb",
-            date: "30 mei 2025",
+            date: "5 juni 2025",
             description: "Ontdek waarom een hoge pagespeed en SEO-score essentieel zijn voor jouw website. KHCustomWeb in Venlo legt uit hoe je met slimme optimalisaties sneller, toegankelijker en beter vindbaar wordt.",
             link: "pagespeed-seo-optimalisatie.html"
         }
