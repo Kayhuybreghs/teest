@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
             category: "Techniek & Performance",
             title: "Wat is een Call-To-Action?",
             date: "30 mei 2025",
-            description: "Waarom je website minstens 3 CTA's nodig heeft.",
+            description: "Ontdek waarom een hoge pagespeed en SEO-score essentieel zijn voor jouw website. KHCustomWeb in Venlo legt uit hoe je met slimme optimalisaties sneller, toegankelijker en beter vindbaar wordt.",
             link: "pagespeed-seo-optimalisatie.html"
         }
     ];
