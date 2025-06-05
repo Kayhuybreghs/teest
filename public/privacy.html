@@ -224,56 +224,7 @@
     </div>
   </div>
 
-  <!-- Cookie voorkeur reset knop -->
-  <div style="text-align: center; padding: 1rem;">
-    <button onclick="resetCookieConsent()" style="margin-top: 1rem; padding: 0.5rem 1rem; border-radius: 5px; background-color: #eee; border: 1px solid #ccc;">
-      Cookievoorkeuren aanpassen
-    </button>
-  </div>
-
-  <script>
-    function acceptCookies() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      loadAnalytics();
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    function declineCookies() {
-      localStorage.setItem('cookieConsent', 'declined');
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    function resetCookieConsent() {
-      localStorage.removeItem('cookieConsent');
-      location.reload();
-    }
-
-    function loadAnalytics() {
-      const script = document.createElement('script');
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-ELZDN804Q3";
-      script.async = true;
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-ELZDN804Q3', {
-        anonymize_ip: true,
-        allow_google_signals: false,
-        allow_ad_personalization_signals: false
-      });
-    }
-
-    window.addEventListener('load', () => {
-      const consent = localStorage.getItem('cookieConsent');
-      if (!consent) {
-        document.getElementById('cookie-banner').style.display = 'flex';
-      } else if (consent === 'accepted') {
-        loadAnalytics();
-      }
-    });
-  </script>
+    <script src="/js/cookie-consent.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
