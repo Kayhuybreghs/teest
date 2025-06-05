@@ -152,6 +152,13 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "30 mei 2025",
             description: "Ontdek of onze hosting en onderhoudsdienst bij jou past.",
             link: "hosting-onderhoudsdienst-khcustomweb.html"
+        },
+          {
+            category: "Techniek & Performance",
+            title: "Wat is een Call-To-Action?",
+            date: "30 mei 2025",
+            description: "Waarom je website minstens 3 CTA's nodig heeft.",
+            link: "pagespeed-seo-optimalisatie.html"
         }
     ];
 
