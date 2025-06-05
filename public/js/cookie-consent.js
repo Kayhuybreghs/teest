@@ -1,5 +1,14 @@
 (function () {
   const bannerHTML = `
+    <style>
+      #cookie-banner {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      #cookie-banner.show {
+        opacity: 1;
+      }
+    </style>
     <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff3e0; color: #000; padding: 1rem; box-shadow: 0 -2px 8px rgba(0,0,0,0.1); font-family: sans-serif; z-index: 9999; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
       <div style="max-width: 70%; font-size: 1rem;">
         We gebruiken <strong>analytische cookies</strong> om het gedrag op onze website te begrijpen en zo jouw ervaring te verbeteren. Door op <strong>"Accepteren"</strong> te klikken geef je toestemming voor het gebruik van <strong>Google Analytics</strong>. Wil je dit liever niet? Klik dan op <strong>"Weigeren"</strong>. <a href="/privacy.html" style="text-decoration: underline; color: #ff6a00;">Lees meer</a>.
@@ -16,17 +25,29 @@
 
     if (!consent) {
       document.body.insertAdjacentHTML('beforeend', bannerHTML);
-      document.getElementById('cookie-banner').style.display = 'flex';
+      const banner = document.getElementById('cookie-banner');
+
+      // Wacht 2 seconden en toon dan de banner met fade-in
+      setTimeout(() => {
+        banner.style.display = 'flex';
+        // trigger CSS transition
+        requestAnimationFrame(() => {
+          banner.classList.add('show');
+        });
+      }, 2000);
 
       document.getElementById('accept-cookies').addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'accepted');
         loadAnalytics();
-        document.getElementById('cookie-banner').remove();
+        // fade out animatie voor verwijderen
+        banner.classList.remove('show');
+        setTimeout(() => banner.remove(), 500);
       });
 
       document.getElementById('decline-cookies').addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'declined');
-        document.getElementById('cookie-banner').remove();
+        banner.classList.remove('show');
+        setTimeout(() => banner.remove(), 500);
       });
     } else if (consent === 'accepted') {
       loadAnalytics();
