@@ -34,7 +34,7 @@
         requestAnimationFrame(() => {
           banner.classList.add('show');
         });
-      }, 2000);
+      }, 1500);
 
       document.getElementById('accept-cookies').addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'accepted');
